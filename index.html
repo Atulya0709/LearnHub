@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="LearnHub — explore practical courses, learn at your pace, and track your progress." />
+  <title>LearnHub | Learn something new</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="site-header">
+      <a class="brand" href="#home" aria-label="LearnHub home">
+        <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 7.5 12 3l9 4.5-9 4.5-9-4.5Z"/><path d="M6.5 9.4v5.1c3.5 2.7 7.5 2.7 11 0V9.4M21 8v6"/></svg></span>
+        <span>learn<span class="brand-accent">hub</span></span>
+      </a>
+
+      <button class="mobile-menu-btn icon-button" id="mobileMenuBtn" aria-label="Open menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+
+      <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+        <button class="nav-link active" data-page="home">Discover</button>
+        <button class="nav-link" data-page="catalog">Courses</button>
+        <button class="nav-link" data-page="dashboard">My learning</button>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-button theme-toggle" id="themeToggle" aria-label="Toggle dark mode" title="Toggle theme">
+          <svg viewBox="0 0 24 24"><path d="M20.5 15.2A8.5 8.5 0 0 1 8.8 3.5 8.6 8.6 0 1 0 20.5 15.2Z"/></svg>
+        </button>
+        <div id="accountArea"><button class="button button-primary button-small" id="openAuthBtn">Sign in</button></div>
+      </div>
+    </header>
+
+    <main id="mainContent" tabindex="-1">
+      <!-- HOME PAGE -->
+      <section class="page active" id="page-home" data-page-section="home">
+        <div class="hero-section">
+          <div class="hero-copy">
+            <div class="eyebrow"><span class="eyebrow-dot"></span> YOUR NEXT CHAPTER STARTS HERE</div>
+            <h1>Make learning<br /><span class="gradient-text">your superpower.</span></h1>
+            <p class="hero-description">Build practical skills, explore new interests, and move closer to your goals with courses made for real life.</p>
+            <div class="hero-actions">
+              <button class="button button-primary" data-go="catalog">Explore courses <span aria-hidden="true">→</span></button>
+              <button class="button button-quiet" data-go="dashboard"><span class="play-icon">▶</span> My learning</button>
+            </div>
+            <div class="hero-trust">
+              <div class="avatar-stack" aria-hidden="true"><span>AM</span><span>RK</span><span>PS</span><span>+</span></div>
+              <div><strong>10,000+</strong><small>learners growing every day</small></div>
+            </div>
+          </div>
+          <div class="hero-art" aria-label="Learning illustration">
+            <div class="hero-orbit orbit-one"></div><div class="hero-orbit orbit-two"></div>
+            <div class="hero-glow"></div>
+            <div class="floating-note note-top"><span class="note-icon purple">✦</span><span><b>Keep growing</b><small>One lesson at a time</small></span></div>
+            <div class="learning-card">
+              <div class="learning-card-top"><span class="card-dot"></span><span class="card-dot"></span><span class="card-dot"></span><span class="card-label">YOUR LEARNING SPACE</span></div>
+              <div class="learning-illustration"><div class="screen-shape"><div class="screen-line wide"></div><div class="screen-line"></div><div class="screen-code"><i></i><i></i><i></i><i></i></div></div><div class="plant"><i></i><b></b></div><div class="book book-one"></div><div class="book book-two"></div></div>
+              <div class="learning-card-bottom"><div><small>WEEKLY GOAL</small><b>Keep your streak alive</b></div><div class="progress-ring"><span>4/5</span></div></div>
+            </div>
+            <div class="floating-note note-bottom"><span class="note-icon yellow">✓</span><span><b>Progress saved</b><small>You’re doing great!</small></span></div>
+            <div class="hero-spark spark-one">✦</div><div class="hero-spark spark-two">✧</div>
+          </div>
+        </div>
+
+        <div class="stats-strip">
+          <div class="stat-item"><span class="stat-icon lavender">▤</span><div><strong>120+</strong><small>Expert-led lessons</small></div></div>
+          <div class="stat-item"><span class="stat-icon peach">◎</span><div><strong>15+</strong><small>Learning paths</small></div></div>
+          <div class="stat-item"><span class="stat-icon mint">⌁</span><div><strong>Learn</strong><small>At your own pace</small></div></div>
+          <div class="stat-item"><span class="stat-icon blue">★</span><div><strong>Practical</strong><small>Skills that matter</small></div></div>
+        </div>
+
+        <section class="content-section featured-section">
+          <div class="section-heading"><div><span class="eyebrow">A GREAT PLACE TO START</span><h2>Featured courses</h2><p>Handpicked courses to help you build skills that stick.</p></div><button class="text-link" data-go="catalog">View all courses <span>→</span></button></div>
+          <div class="course-grid" id="featuredCourses"></div>
+        </section>
+
+        <section class="learning-banner">
+          <div class="banner-decoration">✳</div><div><span class="eyebrow">YOUR JOURNEY, YOUR PACE</span><h2>Small steps lead to<br />big achievements.</h2><p>Pick a course, show up for a few minutes each day, and watch your skills grow.</p></div>
+          <button class="button button-light" data-go="catalog">Find your next course <span>→</span></button>
+        </section>
+      </section>
+
+      <!-- CATALOG PAGE -->
+      <section class="page" id="page-catalog" data-page-section="catalog">
+        <div class="page-heading"><div><span class="eyebrow">THE CLASSROOM IS OPEN</span><h1>Explore courses</h1><p>Find something you’re excited to learn.</p></div><div class="catalog-count"><strong id="courseCount">0</strong><span>courses to explore</span></div></div>
+        <div class="catalog-toolbar">
+          <label class="search-box"><svg viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 4.5 4.5"/></svg><input id="courseSearch" type="search" placeholder="Search courses, skills, or instructors..." autocomplete="off" /></label>
+          <select id="levelFilter" class="select-control" aria-label="Filter by level"><option value="all">All levels</option><option value="Beginner">Beginner</option><option value="Intermediate">Intermediate</option><option value="Advanced">Advanced</option></select>
+        </div>
+        <div class="category-row" id="categoryFilters" aria-label="Filter by category"></div>
+        <div class="course-grid catalog-grid" id="allCourses"></div>
+        <div class="empty-state hidden" id="noCourses"><div class="empty-icon">⌕</div><h3>No courses found</h3><p>Try a different search or category.</p><button class="button button-outline" id="clearFilters">Clear filters</button></div>
+      </section>
+
+      <!-- DASHBOARD PAGE -->
+      <section class="page" id="page-dashboard" data-page-section="dashboard">
+        <div class="page-heading dashboard-heading"><div><span class="eyebrow">YOUR PERSONAL LEARNING SPACE</span><h1 id="dashboardGreeting">Welcome back!</h1><p>Every lesson is a step forward. Keep it up.</p></div><button class="button button-primary" data-go="catalog">＋ Find a course</button></div>
+        <div class="dashboard-stats" id="dashboardStats"></div>
+        <div class="dashboard-layout"><section class="dashboard-main"><div class="section-heading compact-heading"><div><h2>Continue learning</h2><p>Pick up where you left off.</p></div></div><div id="myCourses" class="my-course-list"></div></section>
+          <aside class="dashboard-side"><div class="side-card weekly-card"><div class="side-card-heading"><div><span class="eyebrow">YOUR MOMENTUM</span><h3>Learning snapshot</h3></div><span class="snapshot-icon">✦</span></div><div class="snapshot-number"><strong id="completedCount">0</strong><span>lessons completed</span></div><div class="snapshot-track"><span id="snapshotBar"></span></div><p id="snapshotMessage">Start a course to build your learning streak.</p></div><div class="side-card tip-card"><span class="tip-icon">☼</span><span class="eyebrow">A LITTLE REMINDER</span><h3>Consistency beats intensity.</h3><p>Even 15 minutes of focused learning today can make tomorrow easier.</p></div></aside>
+        </div>
+      </section>
+
+      <!-- COURSE DETAIL PAGE -->
+      <section class="page" id="page-course" data-page-section="course">
+        <button class="back-link" data-back="catalog">← Back to courses</button>
+        <div id="courseDetailContent"></div>
+      </section>
+
+      <!-- LESSON PAGE -->
+      <section class="page" id="page-lesson" data-page-section="lesson">
+        <button class="back-link" id="backToCourse">← Back to course</button>
+        <div id="lessonContent"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer"><a class="brand footer-brand" href="#home"><span class="brand-mark"><svg viewBox="0 0 24 24"><path d="M3 7.5 12 3l9 4.5-9 4.5-9-4.5Z"/><path d="M6.5 9.4v5.1c3.5 2.7 7.5 2.7 11 0V9.4M21 8v6"/></svg></span><span>learn<span class="brand-accent">hub</span></span></a><p>Learn at your pace. Grow your way.</p><span class="footer-copy">© <span id="currentYear"></span> LearnHub. Frontend demo.</span></footer>
+  </div>
+
+  <!-- AUTH MODAL -->
+  <div class="modal-backdrop hidden" id="authModal" role="dialog" aria-modal="true" aria-labelledby="authTitle">
+    <div class="modal auth-modal"><button class="modal-close" data-close-modal aria-label="Close">×</button><div class="auth-art"><div class="auth-art-orb"></div><span class="auth-art-symbol">✦</span><div class="auth-art-copy"><span>LEARN SOMETHING NEW</span><h2>Your next skill<br />starts here.</h2><p>A little progress each day adds up.</p></div></div><div class="auth-form-wrap"><span class="eyebrow" id="authEyebrow">WELCOME TO LEARNHUB</span><h2 id="authTitle">Welcome back</h2><p class="auth-subtitle" id="authSubtitle">Sign in to continue your learning journey.</p><div class="auth-tabs"><button class="auth-tab active" data-auth-mode="login">Sign in</button><button class="auth-tab" data-auth-mode="register">Create account</button></div><form id="authForm"><div class="form-field hidden" id="nameField"><label for="authName">Your name</label><input id="authName" name="name" type="text" placeholder="e.g. Atulya Mishra" minlength="2" /></div><div class="form-field"><label for="authEmail">Email address</label><input id="authEmail" name="email" type="email" placeholder="you@example.com" required /></div><div class="form-field"><label for="authPassword">Password</label><input id="authPassword" name="password" type="password" placeholder="At least 6 characters" minlength="6" required /></div><p class="form-error" id="authError" role="alert"></p><button class="button button-primary auth-submit" type="submit" id="authSubmit">Sign in <span>→</span></button></form><p class="demo-note">Demo only: your account is stored in this browser, not on a server.</p></div></div>
+  </div>
+
+  <!-- QUIZ MODAL -->
+  <div class="modal-backdrop hidden" id="quizModal" role="dialog" aria-modal="true" aria-labelledby="quizTitle"><div class="modal quiz-modal"><button class="modal-close" data-close-modal aria-label="Close">×</button><span class="eyebrow">QUICK KNOWLEDGE CHECK</span><h2 id="quizTitle">Test what you’ve learned</h2><p class="quiz-intro">Choose the best answer for each question.</p><form id="quizForm"><div id="quizQuestions"></div><button class="button button-primary" type="submit">Submit answers <span>→</span></button></form><div id="quizResult" class="quiz-result hidden"></div></div></div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="js/app.js"></script>
+</body>
+</html>
